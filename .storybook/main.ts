@@ -1,22 +1,29 @@
-import { StorybookConfig } from "@storybook/react-native-web-vite";
+import type { StorybookConfig } from '@storybook/react-native-web-vite';
 
-const main: StorybookConfig = {
-  stories: [
-    "../components/**/*.stories.mdx",
-    "../components/**/*.stories.@(js|jsx|ts|tsx)",
+type ServerStorybookConfig = StorybookConfig & {
+  reactNativeServerOptions: { host: string; port: number };
+};
+
+const main: ServerStorybookConfig = {
+  stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
+
+  addons: [
+    // note why does this break with get absolute?
+    // '@storybook/addon-react-native-server',
+    'storybook-addon-deep-controls',
+    'storybook-addon-themes',
   ],
 
-  addons: ["@storybook/addon-docs", "@chromatic-com/storybook"],
-
   framework: {
-    name: "@storybook/react-native-web-vite",
+    name: '@storybook/react-native-web-vite',
     options: {},
   },
 
-  docs: {},
+  // logLevel: 'debug',
 
-  typescript: {
-    reactDocgen: "react-docgen",
+  reactNativeServerOptions: {
+    host: 'localhost',
+    port: 7007,
   },
 };
 

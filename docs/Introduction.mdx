@@ -1,0 +1,44 @@
+---
+name: Introduction
+route: /
+---
+
+# DocMorris Health App Components
+
+Welcome to the DocMorris Health App component library documentation. This library provides a set of reusable components built with React Native and following SOLID principles.
+
+## Core Principles
+
+Our components are built with these principles in mind:
+
+- **Single Responsibility**: Each component has a single responsibility
+- **Open/Closed**: Components are open for extension but closed for modification
+- **Liskov Substitution**: Subtypes can be substituted for their base types
+- **Interface Segregation**: We prevent clients from depending on interfaces they don't use
+- **Dependency Inversion**: We depend on abstractions, not concretions
+
+## Getting Started
+
+```jsx
+import { Button } from '@/components/ui/Button';
+
+export default function MyScreen() {
+  return (
+    <Button variant="primary" onPress={() => console.log('Pressed')}>
+      Press Me
+    </Button>
+  );
+}
+```
+
+## Component Categories
+
+Our components are organized into the following categories:
+
+- **UI Components**: Basic building blocks (Button, Card, Input, etc.)
+- **Scan Components**: Components for scanning health cards and OCR
+- **Auth Components**: Components for authentication and verification
+- **Navigation**: Components for app navigation
+- **Modals**: Overlay and dialog components
+
+Explore the sidebar for detailed documentation on each component.

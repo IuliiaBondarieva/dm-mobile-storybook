@@ -9,7 +9,7 @@ function App() {
 }
 
 let AppEntryPoint = App;
-
+console.log(process.env.EXPO_PUBLIC_STORYBOOK_ENABLED)
 if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true") {
   AppEntryPoint = require("./.rnstorybook").default;
 }
